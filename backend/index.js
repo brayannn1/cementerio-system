@@ -1,15 +1,17 @@
-const express = require('express');
-const pool = require('./basededatos');
-const app = express();
+const express = require('express')
 
-app.use(express.json());
+const usuariosRoutes = require('./crud/usuarios')
+const visitasRoutes = require('./crud/visitas')
+const comentariosRoutes = require('./crud/comentarios')
 
-app.get('/usuarios', async (req, res) => {
-    const resultado = await pool.query('SELECT * FROM usuario');
+const app = express()
 
-    res.json(resultado.rows);
-});
+app.use(express.json())
+
+app.use('/usuarios', usuariosRoutes)
+app.use('/visitas', visitasRoutes)
+app.use('/comentarios', comentariosRoutes)
 
 app.listen(3000, () => {
-    console.log('Servidor corriendo en puerto 3000');
+    console.log('Servidor corriendo')
 });

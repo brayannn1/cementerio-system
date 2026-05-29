@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
         [nombre, correo, contrasena, rol]
     )
     
-    res.status(201).json({
+    res.status(200).json({
         mensaje: 'Usuario creado con exito'
     })
     } catch(error) {
@@ -43,7 +43,7 @@ router.get('/', async (req, res) => {
             mensaje: 'Error'
         })
     }
-});
+})
 
 // put usuarios
 router.put('/:id', async (req, res) => {

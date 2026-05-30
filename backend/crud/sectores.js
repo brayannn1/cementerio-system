@@ -1,5 +1,5 @@
 // post = crear
-// get = obtener usuarios
+// get = obtener 
 // put = actualizar 
 // delete = eliminar
 
@@ -7,7 +7,7 @@ const express = require('express')
 const router = express.Router()
 const pool = require('../basededatos')
 
-// post sector
+// post sectores
 router.post('/', async (req, res) => {
     try {
     const {nombre, ubicacion_sector, cantidad_sepulturas, metros_cuadrados} = req.body
@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
         })
     }
 })
-// get sector
+// get sectores
 router.get('/', async (req, res) => {
     try {
         const resultado = await pool.query('SELECT * FROM sector')
@@ -40,7 +40,24 @@ router.get('/', async (req, res) => {
         })
     }
 })
-// put sector
+
+// get sectores por id
+router.get('/:id', async (req, res) => {
+    try {
+        const {id} = req.params
+        const resultado = await pool.query('SELECT * FROM sector WHERE id_sector=$1',
+            [id]
+        )
+        res.json(resultado.rows)
+    } catch(error) {
+        console.log(error)
+
+        res.status(500).json({
+            mensaje: 'Error al buscar sector'
+        })
+    }
+})
+// put sectores
 router.put('/:id', async (req, res) => {
     try {
         const {id} = req.params
@@ -61,7 +78,7 @@ router.put('/:id', async (req, res) => {
         }
 })
 
-// delete sector
+// delete sectores
 router.delete('/:id', async (req, res) => {
     try {
     const {id} = req.params

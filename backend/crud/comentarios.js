@@ -1,5 +1,5 @@
 // post = crear
-// get = obtener usuarios
+// get = obtener 
 // put = actualizar 
 // delete = eliminar
 
@@ -29,7 +29,6 @@ router.post('/', async (req, res) => {
         }
 })
 
-
 // get comentarios
 router.get('/', async (req, res) => {
     try {
@@ -44,6 +43,23 @@ router.get('/', async (req, res) => {
         })
     }
 });
+
+// get comentarios por id
+router.get('/:id', async (req, res) => {
+    try {
+        const {id} = req.params
+        const resultado = await pool.query('SELECT * FROM comentario WHERE id_comentario =$1',
+            [id]
+        )
+        res.json(resultado.rows)
+    } catch(error) {
+        console.log(error)
+
+        res.status(500).json({
+            mensaje: 'Error al buscar comentario'
+        })
+    }
+})
 
 // put comentarios
 router.put('/:id', async (req, res) => {

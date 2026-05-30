@@ -1,5 +1,5 @@
 // post = crear
-// get = obtener usuarios
+// get = obtener 
 // put = actualizar 
 // delete = eliminar
 
@@ -42,6 +42,23 @@ router.get('/', async (req, res) => {
     }
 })
 
+// get eventos por id
+router.get('/:id', async (req, res) => {
+    try {
+        const {id} = req.params
+        const resultado = await pool.query('SELECT * FROM evento WHERE id_evento = $1', 
+            [id]
+        )
+        res.json(resultado.rows)
+    } catch(error) {
+        console.log(error)
+
+        res.status(500).json({
+            mensaje: 'Error al buscar evento'
+        })
+    }
+})
+
 // put eventos
 router.put('/:id', async (req, res) => {
     try {
@@ -52,7 +69,7 @@ router.put('/:id', async (req, res) => {
             'UPDATE evento SET titulo = $1, descripcion = $2, fecha_evento = $3, imagen = $4 WHERE id_evento = $5',
             [titulo, descripcion, fecha_evento, imagen, id]
         )
-        res.status(201).json({
+        res.status(200).json({
             mensaje: 'Evento actualizado con exito'
         }) } catch(error) {
             console.log(error)
@@ -71,7 +88,7 @@ router.delete('/:id', async (req, res) => {
             'DELETE FROM evento WHERE id_evento = $1',
             [id]
         )
-        res.status(201).json({
+        res.status(200).json({
             mensaje: 'Evento eliminado con exito'
         }) } catch(error) {
             console.log(error)

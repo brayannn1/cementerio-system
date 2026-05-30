@@ -1,5 +1,5 @@
 // post = crear
-// get = obtener usuarios
+// get = obtener
 // put = actualizar 
 // delete = eliminar
 
@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
         [nombre, correo, contrasena, rol]
     )
     
-    res.status(200).json({
+    res.status(201).json({
         mensaje: 'Usuario creado con exito'
     })
     } catch(error) {
@@ -41,6 +41,24 @@ router.get('/', async (req, res) => {
 
         res.status(500).json({
             mensaje: 'Error'
+        })
+    }
+})
+// get usuarios por id
+router.get('/:id', async (req, res) => {
+    try {
+        const {id} = req.params
+        const resultado = await pool.query('SELECT * FROM usuario WHERE id_usuario = $1',
+            [id]
+        )
+        
+        res.json(resultado.rows)
+        } 
+        catch(error) {
+        console.log(error)
+
+        res.status(500).json({
+            mensaje: 'Error al buscar usuario'
         })
     }
 })

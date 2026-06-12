@@ -1,6 +1,12 @@
 const express = require('express')
+const cors = require('cors')
 
-//crud normal
+const app = express()
+
+app.use(cors())
+app.use(express.json())
+
+// crud normal
 const usuariosRoutes = require('./crud/usuarios')
 const visitasRoutes = require('./crud/visitas')
 const comentariosRoutes = require('./crud/comentarios')
@@ -14,10 +20,6 @@ const fallecidosUbicacionRoutes = require('./consultas/fallecidosUbicacion')
 const sectoresDisponiblesRoutes = require('./consultas/sectoresDisponibles')
 const eventosActivosRoutes = require('./consultas/eventosActivos')
 const visitasUsuariosRoutes = require('./consultas/visitasUsuarios')
-
-const app = express()
-
-app.use(express.json())
 
 // normal url
 app.use('/usuarios', usuariosRoutes)

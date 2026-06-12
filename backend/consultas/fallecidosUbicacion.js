@@ -10,7 +10,7 @@ router.get('/recientes', async (req, res) => {
         const resultado = await pool.query(
             `SELECT 
             f.id_fallecido,
-            f.nombre,
+            f.nombre as nombre_fallecido,
             f.fecha_fallecimiento,
 
             s.ubicacion_sepultura,
@@ -47,7 +47,7 @@ router.get('/fechas/:fecha1/:fecha2', async(req, res) => {
         
         const resultado = await pool.query(
             `SELECT 
-            f.nombre,
+            f.nombre as nombre_fallecido,
             f.fecha_nacimiento,
             f.fecha_fallecimiento,
             
@@ -120,7 +120,7 @@ router.get('/sector/:nombre', async (req, res) => {
         const {nombre} = req.params
         const resultado = await pool.query(
             `SELECT 
-            f.nombre,
+            f.nombre as nombre_fallecido,
             f.fecha_nacimiento,
             f.fecha_fallecimiento,
 
@@ -156,7 +156,7 @@ router.get('/detalle/:id', async (req, res) => {
 
         const resultado = await pool.query(
             `SELECT
-            f.nombre,
+            f.nombre as nombre_fallecido,
             f.fecha_nacimiento,
             f.fecha_fallecimiento,
             f.biografia,
@@ -164,7 +164,7 @@ router.get('/detalle/:id', async (req, res) => {
             s.ubicacion_sepultura,
             s.estado,
 
-            sec.nombre,
+            sec.nombre as nombre_sector,
             sec.ubicacion_sector,
 
             f.id_fallecido,
@@ -201,7 +201,7 @@ router.get('/buscar/:nombre', async (req, res) => {
         const resultados = await pool.query(
             `SELECT 
             f.id_fallecido,
-            f.nombre,
+            f.nombre as nombre_fallecido,
             f.fecha_nacimiento, 
             f.fecha_fallecimiento,
 
@@ -235,7 +235,7 @@ router.get('/', async (req, res) => {
         const resultado = await pool.query(
             `SELECT
             f.id_fallecido,
-            f.nombre,
+            f.nombre as nombre_fallecido,
             f.fecha_nacimiento,
             f.fecha_fallecimiento,
             

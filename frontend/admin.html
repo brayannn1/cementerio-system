@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Admin</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <h1>Panel de Administración</h1>
+
+    <button onclick="cerrarSesion()">
+        Cerrar sesión
+    </button>
+
+    <hr>
+
+    <div class="panel-admin">
+
+        <div class="modulo">
+            <h2>Fallecidos</h2>
+            <button onclick="mostrarFallecidos()">
+                Gestionar
+            </button>
+        </div>
+
+        <div class="modulo">
+            <h2>Sepulturas</h2>
+            <button onclick="mostrarSepulturas()">
+                Gestionar
+            </button>
+        </div>
+
+        <div class="modulo">
+            <h2>Sectores</h2>
+            <button>
+                Gestionar
+            </button>
+        </div>
+
+        <div class="modulo">
+            <h2>Usuarios</h2>
+            <button>
+                Gestionar
+            </button>
+        </div>
+
+        <div class="modulo">
+            <h2>Eventos</h2>
+            <button>
+                Gestionar
+            </button>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div id="contenidoAdmin">
+
+    </div>
+
+    <script src="js/admin/admin.js"></script>
+    <script src="js/admin/adminFallecidos.js"></script>
+    <script src="js/admin/adminSepulturas.js"></script>
+
+</body>
+</html>

@@ -1,3 +1,4 @@
+
 async function buscarFallecido() {
 
     document.getElementById('detalle').innerHTML = ''
@@ -239,6 +240,11 @@ async function cargarSepulturas() {
     })
 }
 
+function cerrarSesion(){
 
+    localStorage.removeItem('usuario')
+
+    window.location.href = 'login.html'
+}
 cargarFallecidos()
 cargarSepulturas()

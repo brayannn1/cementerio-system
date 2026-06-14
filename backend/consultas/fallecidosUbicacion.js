@@ -47,6 +47,7 @@ router.get('/fechas/:fecha1/:fecha2', async(req, res) => {
         
         const resultado = await pool.query(
             `SELECT 
+            f.id_fallecido,
             f.nombre as nombre_fallecido,
             f.fecha_nacimiento,
             f.fecha_fallecimiento,
@@ -120,6 +121,7 @@ router.get('/sector/:nombre', async (req, res) => {
         const {nombre} = req.params
         const resultado = await pool.query(
             `SELECT 
+            f.id_fallecido,
             f.nombre as nombre_fallecido,
             f.fecha_nacimiento,
             f.fecha_fallecimiento,

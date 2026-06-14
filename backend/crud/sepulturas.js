@@ -71,7 +71,7 @@ router.put('/:id', async (req, res) => {
             [ubicacion_sepultura, estado, id_sector, id]
         )
         res.status(200).json({
-            mensaje: 'Sepultura creada con exito'
+            mensaje: 'Sepultura actualizada con exito'
         })
     } catch(error) {
         console.log(error)

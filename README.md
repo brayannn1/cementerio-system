@@ -41,50 +41,62 @@ Actualmente incorpora consultas avanzadas para búsqueda de fallecidos, disponib
 
 ## Funcionalidades disponibles
 
-### Gestión de fallecidos
+### Autenticación
 
-* Registrar fallecidos.
-* Listar todos los fallecidos.
-* Buscar fallecidos por nombre.
-* Consultar detalle de un fallecido.
-* Buscar fallecidos por rango de fechas.
-* Buscar fallecidos por sector.
-* Consultar fallecidos más recientes.
+* Inicio de sesion con correo y contraseña.
+* Registro de nuevos usuarios.
+* Redireccion automatica segun el rol (admin o usuario).
+* Cierre de sesion
 
-### Gestión de sepulturas
+### Panel de administración
 
-* Registrar sepulturas.
-* Consultar sepulturas disponibles.
-* Consultar sepulturas ocupadas.
-* Listar sepulturas libres.
-* Obtener sector con mayor ocupación.
+#### Gestión de fallecidos
 
-### Gestión de sectores
+* Crear, buscar, editar y eliminar fallecidos.
+* Buscar fallecidos por nombre, ID, rango de fechas o sector.
+* Consultar detalle completo de un fallecido
 
-* Registrar sectores.
-* Consultar disponibilidad por sector.
+#### Gestión de sepulturas
 
-### Gestión de eventos
+* Crear, buscar, editar y eliminar sepulturas.
+* Buscar sepulturas por ID, estado o sector.
 
-* Registrar eventos.
-* Consultar eventos próximos.
-* Consultar próximo evento.
-* Buscar eventos por fecha.
-* Buscar eventos por título.
+#### Gestión de sectores
 
-### Gestión de visitas
+* Crear, buscar, editar y eliminar sectores.
+* Buscar sectores por ID o nombre.
 
-* Registrar visitas.
-* Consultar visitas por usuario.
-* Consultar cantidad de visitas por usuario.
-* Consultar detalle de visitas.
+#### Gestión de eventos
 
-### Frontend
+* Crear, buscar, editar y eliminar eventos.
+* Buscar eventos por ID, nombre o rango de fechas.
 
-* Búsqueda de fallecidos.
-* Visualización de resultados.
-* Visualización de detalles.
-* Registro de nuevos fallecidos.
+
+#### Gestión de visitas
+
+* Crear, buscar, editar y eliminar visitas.
+* Buscar visitas por ID, fecha, usuario o tipo de visita.
+* Consultar detalle de visitas con información del usuario.
+
+#### Gestión de usuarios
+
+* Crear, buscar, editar y eliminar usuarios.
+* Buscar usuarios por ID, nombre, correo o rol.
+* Modificar rol de usuarios.
+
+#### Gestión de comentarios
+
+* Crear, buscar, editar y eliminar comentarios.
+* Buscar comentarios por ID, fecha, usuario o rol.
+
+### Portal de usuario
+
+* Buscar fallecidos por nombre, fecha de fallecimiento o sector.
+* Ver detalle de un fallecido.
+* Mini mapa de muestra que enseña sepulturas libres, ocupadas y resalta la ubicacion del fallecido.
+* Ver eventos disponibles.
+* Dejar comentarios.
+* Registrar visitas seleccionando el tipo (mantenimiento, aniversario, duelo u otro).
 
 ---
 
@@ -153,7 +165,7 @@ http://localhost:3000
 Abrir el archivo:
 
 ```bash
-frontend/index.html
+frontend/login.html
 ```
 
 o utilizar Live Server en Visual Studio Code.
@@ -162,26 +174,41 @@ o utilizar Live Server en Visual Studio Code.
 
 ## Capturas del proyecto
 
-### Pantalla principal
+### Inicio de sesion
 
-![Pantalla principal](images/img_readme/interfaz_inicio.png)
+![Inicio de sesion](images/img_readme/inicio_de_sesion.png)
 
-### Búsqueda de fallecidos
+### Registro de usuario
 
-![Búsqueda de fallecidos](images/img_readme/buscar_fallecidos.png)
+![Registro de usuario](images/img_readme/registro_de_usuario.png)
 
-### Detalle de fallecido
+## Panel Admin 
 
-![Detalle de fallecido](images/img_readme/ver_detalles.png)
+![Panel Admin](images/img_readme/panel_admin.png)
 
----
+### Detalles de gestion
+### Ejemplo busqueda
+
+![Panel Admin](images/img_readme/detalles_admin.png)
+
+### Ejemplo Editar
+
+![Panel Admin](images/img_readme/editar_admin.png)
+
+## Panel usuario
+
+![Panel usuario](images/img_readme/panel_usuario.png)
+
+### Detalles de funciones
+### Ejemplo Dejar comentario
+
+![Panel usuario](images/img_readme/comentario_usuario.png)
 
 ## Mejoras futuras
 
 * Integración de mapa interactivo del cementerio.
 * Visualización gráfica de sectores y sepulturas.
 * Sistema de autenticación.
-* Panel administrativo.
 * Estadísticas y reportes.
 * Visualización de ubicación exacta de sepulturas.
 

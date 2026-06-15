@@ -1,0 +1,30 @@
+.admin-page .panel-admin{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.admin-page .modulo{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.admin-page .modulo h2{
+    margin-bottom:15px;
+}
+
+#contenidoAdmin{
+    margin-top:25px;
+}
+
+#detalleAdmin{
+    border-left:5px solid #2e5d3b;
+}
+
+#editarAdmin{
+    border-left:5px solid #eab308;
+}

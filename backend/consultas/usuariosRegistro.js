@@ -38,4 +38,43 @@ router.post('/login', async (req, res) => {
     }
 })
 
+// GET /consultas/usuarios/buscar/nombre/:nombre
+router.get('/buscar/nombre/:nombre', async (req, res) => {
+    try {
+    const { nombre } = req.params
+    const resultado = await pool.query(
+        `SELECT * FROM usuario WHERE LOWER(nombre) LIKE LOWER($1)`,
+        [`%${nombre}%`]
+    )
+    res.json(resultado.rows)
+} catch {
+    console.log(error)
+
+    res.status(500).json({
+        mensaje: 'Error al buscar'
+    }
+    )
+}
+})
+
+// GET /consultas/usuarios/buscar/correo/:correo
+router.get('/buscar/correo/:correo', async (req, res) => {
+    const { correo } = req.params
+    const resultado = await pool.query(
+        `SELECT * FROM usuario WHERE LOWER(correo) LIKE LOWER($1)`,
+        [`%${correo}%`]
+    )
+    res.json(resultado.rows)
+})
+
+// GET /consultas/usuarios/buscar/rol/:rol
+router.get('/buscar/rol/:rol', async (req, res) => {
+    const { rol } = req.params
+    const resultado = await pool.query(
+        `SELECT * FROM usuario WHERE rol = $1`,
+        [rol]
+    )
+    res.json(resultado.rows)
+})
+
 module.exports = router

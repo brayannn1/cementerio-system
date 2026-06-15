@@ -21,7 +21,8 @@ const sectoresDisponiblesRoutes = require('./consultas/sectoresDisponibles')
 const eventosActivosRoutes = require('./consultas/eventosActivos')
 const visitasUsuariosRoutes = require('./consultas/visitasUsuarios')
 const usuariosRegistroRouter = require('./consultas/usuariosRegistro')
-const sepulturasAvanzadasRoutes = require('./consultas/sepulturas') 
+const sepulturasAvanzadasRoutes = require('./consultas/sepulturas')
+const comentariosAvanzadasRoutes = require('./consultas/comentarios')
 
 // normal url
 app.use('/usuarios', usuariosRoutes)
@@ -39,6 +40,7 @@ app.use('/consultas/eventos', eventosActivosRoutes)
 app.use('/consultas/visitas', visitasUsuariosRoutes)
 app.use('/consultas/usuarios', usuariosRegistroRouter)
 app.use('/consultas/sepulturas', sepulturasAvanzadasRoutes)
+app.use('/consultas/comentarios', comentariosAvanzadasRoutes)
 
 app.listen(3000, () => {
     console.log('Servidor corriendo')

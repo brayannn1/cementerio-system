@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Portal Usuario</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/usuario.css">
+</head>
+<body class ="usuario-page">
+
+<header class="header-principal">
+
+    <div>
+
+        <h1>Portal de Usuario</h1>
+
+        <p id="bienvenida"></p>
+
+    </div>
+
+     <hr>
+    <button onclick="cerrarSesion()">
+        Cerrar sesión
+    </button>
+
+
+</header>
+
+
+    <div class="panel-admin">
+
+        <div class="modulo">
+            <h2>Fallecidos</h2>
+            <button onclick="mostrarSeccion('fallecidos')">
+                Buscar
+            </button>
+            
+        </div>
+        <div class="modulo">
+            <h2>Eventos</h2>
+            <button onclick="mostrarSeccion('eventos')">
+                Ver eventos
+            </button>
+        </div>
+
+        <div class="modulo">
+            <h2>Comentarios</h2>
+            <button onclick="mostrarSeccion('comentarios')">
+                Dejar comentario
+            </button>
+        </div>
+
+        <div class="modulo">
+            <h2>Visitas</h2>
+            <button onclick="mostrarSeccion('visitas')">
+                Registrar visita
+            </button>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div id="contenidoUsuario"></div>
+
+    <script src="js/usuario/usuario.js"></script>
+    <script src="js/usuario/fallecidos.js"></script>
+    <script src="js/usuario/eventos.js"></script>
+    <script src="js/usuario/comentarios.js"></script>
+    <script src="js/usuario/visitas.js"></script>
+    <script src="js/usuario/mapa.js"></script>
+</body>
+</html>

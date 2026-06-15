@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Panel Admin</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
-<body>
+<body class="admin-page">
 
-    <h1>Panel de Administración</h1>
+    <header class="header-principal">
 
+    <div>
+
+        <h1>Panel de Administración</h1>
+
+        <p>
+            Gestion de cementerio
+        </p>
+
+    </div>
+    <hr>
     <button onclick="cerrarSesion()">
         Cerrar sesión
     </button>
 
-    <hr>
+</header>
 
     <div class="panel-admin">
 
@@ -33,24 +44,39 @@
 
         <div class="modulo">
             <h2>Sectores</h2>
-            <button>
+            <button onclick="mostrarSectores()">
                 Gestionar
             </button>
         </div>
 
         <div class="modulo">
             <h2>Usuarios</h2>
-            <button>
+            <button onclick="mostrarUsuarios()">
                 Gestionar
             </button>
         </div>
 
         <div class="modulo">
             <h2>Eventos</h2>
-            <button>
+            <button onclick="mostrarEventos()">
                 Gestionar
             </button>
         </div>
+
+        <div class="modulo">
+            <h2>Visitas</h2>
+            <button onclick="mostrarVisitas()">
+                Gestionar
+            </button>
+        </div>
+
+        <div class="modulo">
+            <h2>Comentarios</h2>
+            <button onclick="mostrarComentarios()">
+                Gestionar
+            </button>
+        </div>
+
 
     </div>
 
@@ -63,6 +89,11 @@
     <script src="js/admin/admin.js"></script>
     <script src="js/admin/adminFallecidos.js"></script>
     <script src="js/admin/adminSepulturas.js"></script>
-
+    <script src="js/admin/adminSectores.js"></script>
+    <script src="js/admin/adminEventos.js"></script>
+    <script src="js/admin/adminUsuarios.js"></script>
+    <script src="js/admin/adminVisitas.js"></script>
+    <script src="js/admin/adminComentarios.js"></script>
+    
 </body>
 </html>

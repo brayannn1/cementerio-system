@@ -227,7 +227,51 @@ router.get('/', async (req, res) => {
         })
     }
 })
+// GET /consultas/visitas/tipo/:tipo  (buscar por tipo_visita)
+router.get('/tipo/:tipo', async (req, res) => {
+    const { tipo } = req.params
+    const resultado = await pool.query(
+        `SELECT v.*, u.nombre FROM visita v
+         INNER JOIN usuario u ON u.id_usuario = v.id_usuario
+         WHERE LOWER(v.tipo_visita) = LOWER($1)
+         ORDER BY v.fecha_visita DESC`,
+        [tipo]
+    )
+    res.json(resultado.rows)
+})
 
+// GET /consultas/visitas/usuario/:nombre
+router.get('/usuario-nombre/:nombre', async (req, res) => {
+    try {
+        const { nombre } = req.params
+
+        const resultado = await pool.query(`
+            SELECT
+                v.id_visita,
+                v.fecha_visita,
+
+                u.id_usuario,
+                u.nombre
+
+            FROM visita v
+
+            INNER JOIN usuario u
+            ON u.id_usuario = v.id_usuario
+
+            WHERE LOWER(u.nombre) LIKE LOWER($1)
+        `,
+        [`%${nombre}%`])
+
+        res.json(resultado.rows)
+
+    } catch(error) {
+        console.log(error)
+
+        res.status(500).json({
+            mensaje: 'Error al buscar visitas del usuario'
+        })
+    }
+})
 
 
 

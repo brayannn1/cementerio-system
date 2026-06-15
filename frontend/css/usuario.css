@@ -1,0 +1,124 @@
+.usuario-page .panel-admin{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-top:20px;
+}
+
+.usuario-page .modulo{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.usuario-page .modulo h2{
+    margin-bottom:15px;
+}
+
+#contenidoUsuario{
+    margin-top:25px;
+}
+
+
+
+#mapaCementerio{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fill,minmax(120px,1fr));
+
+    gap:12px;
+
+    margin-top:20px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+.sepultura{
+
+    min-height:80px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.libre{
+
+    background:#22c55e;
+}
+
+.ocupada{
+
+    background:#ef4444;
+}
+
+.resaltada{
+
+    background:#8b5cf6 !important;
+}
+
+.sepultura:hover{
+
+    transform:scale(1.05);
+
+    opacity:.9;
+}
+
+#detalleMapa{
+
+    margin-top:20px;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+.leyendaMapa{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:20px;
+
+    flex-wrap:wrap;
+}
+
+.leyenda{
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    color:white;
+
+    font-weight:bold;
+}

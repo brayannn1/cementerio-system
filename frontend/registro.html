@@ -2,14 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/auth.css">
 </head>
 <body class="auth-page">
 
     <div class="auth-container">
-    <h1>Iniciar Sesión</h1>
+    <h1>Crear cuenta</h1>
+
+    <input
+        type="text"
+        id="nombre"
+        placeholder="Nombre completo"
+    >
+
+    <br><br>
 
     <input
         type="email"
@@ -27,13 +35,16 @@
 
     <br><br>
 
-    <button onclick="login()">
-        Ingresar
+    <button onclick="registrar()">
+        Crear cuenta
     </button>
+
     <br><br>
-    <a href="registro.html">¿No tienes cuenta? Regístrate</a>
-</div>
-    <script src="js/login.js"></script>
+
+    <a href="login.html">¿Ya tienes cuenta? Inicia sesión</a>
+
+    </div>
+    <script src="js/registro.js"></script>
 
 </body>
 </html>

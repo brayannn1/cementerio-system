@@ -1,0 +1,30 @@
+.auth-page{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.auth-page h1{
+    margin-bottom:30px;
+}
+
+.auth-page input{
+    width:320px;
+}
+
+.auth-page button{
+    width:320px;
+}
+
+.auth-page a{
+    margin-top:15px;
+}
+
+.auth-container{
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+}

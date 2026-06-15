@@ -1,4 +1,7 @@
-async function login() {
+async function registrar() {
+
+    const nombre =
+        document.getElementById('nombre').value
 
     const correo =
         document.getElementById('correo').value
@@ -6,36 +9,32 @@ async function login() {
     const contrasena =
         document.getElementById('contrasena').value
 
+    if(!nombre || !correo || !contrasena) {
+        alert('Complete todos los campos')
+        return
+    }
+
     const respuesta = await fetch(
-        'http://localhost:3000/consultas/usuarios/login',
+        'http://localhost:3000/usuarios',
         {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
+                nombre,
                 correo,
-                contrasena
+                contrasena,
+                rol: 'usuario'
             })
         }
     )
 
     const datos = await respuesta.json()
 
-    if(!respuesta.ok){
-        alert(datos.mensaje)
-        return
-    }
+    alert(datos.mensaje)
 
-    localStorage.setItem(
-        'usuario',
-        JSON.stringify(datos.usuario)
-    )
-
-    if(datos.usuario.rol === 'admin'){
-        window.location.href = 'admin.html'
+    if(respuesta.ok) {
+        window.location.href = 'login.html'
     }
-    else {
-    window.location.href = 'usuario.html'
-}
 }
